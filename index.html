@@ -6,17 +6,17 @@
     <script type="text/javascript">
       function openUrl() {
         var inputId = document.getElementById('username').value;
-        window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/overview');
+        window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/overview', '_blank');
         return false;
       }
      </script>
   </head>
 
   <body>
-    <form action="https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/+username/overview">
+    <form>
       <label for="username">Please Enter Customer ID</label>
       <input type="text" id="username" name="username" placeholder="Customer ID" required>
-      <input type="button" onclick="openUrl()" id="submitBtn" disabled="disabled" value="Get Customer ID">
+      <button onclick="openUrl()" id="submitBtn" disabled="disabled">Get Customer ID</button>
     </form>
     <script>
       (function() {
