@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<h1>Check Customer Information</h1>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      function openUrl() {
+        var inputId = document.getElementById('username').value;
+        window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/overview');
+      }
 
-<p>The form lets you search details of a customer using VIN.</p>
+    </script>
+  </head>
 
-<form action="/action_page.php" id="form1">
-  <label for="fname">Enter VIN:</label>
-  <input type="text" id="vin" name="fname"><br><br>
-  <input type="submit" value="Submit">
-</form>
+  <body>
+    <form action="https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/+username/overview">
+      <label for="username">Please Enter Customer ID</label>
+      <input type="text" id="username" name="username" placeholder="Customer ID" required>
+      <button onclick="openUrl()" id="submitBtn" disabled="disabled">Get Customer ID</button>
+    </form>
+    <script>
+      (function() {
+        $('#username').keyup(function() {
+          var empty = false;
+          $('#username').each(function() {
+            if ($(this).val() == '') {
+              empty = true;
+            }
+          });
+          if (empty) {
+            $('#submitBtn').attr('disabled', 'disabled');
+          } else {
+            $('#submitBtn').removeAttr('disabled');
+          }
+        });
+      })()
 
-<p>The details of the VIN entered are as shown below</p>
+    </script>
+  </body>
 
-<label for="First Name"><b>First Name:</b></label>
-<label for="First Name">Gaurav:</label> <br>
-<label for="Last Name"><b>Last name:</b></label>
-<label for="First Name">Gupta:</label><br>
-<label for="Adress"><b>Address:</b></label>
-<label for="First Name">34 Birch End Warwick, CV345GQ </label> <br>
-<label for="Adress"><b>Email ID:</b></label>
-<label for="Adress">ggupta4@gmail.com</label><br>
-<label for="Adress"><b>Phone Number</b></label>
-<label for="Adress">07525869306</label><br>
-<label for="Adress"><b>Vehicle Details</b></label>
-<label for="Adress">Jaguar XE 2016</label><br>
-<label for="Adress"><b>Warranty Status</b></label>
-<label for="Adress">Warranty expired on 23-Oct-2020</label><br>
-<label for="Adress"><b>Manufactured Date</b></label>
-<label for="Adress">16-Oct-2016</label><br>
-<label for="Adress"><b>Service Info</b></label>
-<label for="Adress">Last service date - 15-Aug-2019</label><br>
-</body>
+
+
 </html>
