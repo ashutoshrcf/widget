@@ -7,14 +7,14 @@
       function openUrl() {
         var inputId = document.getElementById('username').value;
         window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/overview', '_blank');
-        document.getElementById("username").value=""
+        document.getElementById("formId").reset();
         return false;
       }
      </script>
   </head>
 
   <body>
-    <form>
+    <form id="formId">
       <label for="username">Please Enter Customer ID</label>
       <input type="text" id="username" name="username" placeholder="Customer ID">
       <button onclick="openUrl()" id="submitBtn" disabled="disabled">Get Customer ID</button>
