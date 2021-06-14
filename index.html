@@ -10,14 +10,28 @@
         document.getElementById("formId").reset();
         return false;
       }
+      
+      function getVin() {
+        var inputId = document.getElementById('username1').value;
+        var inputVin = document.getElementById('vin').value;
+        window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/vehicle/' + inputVin + '/purchase-and-ownership', '_blank');
+        document.getElementById("formId").reset();
+        return false;
+      }
      </script>
   </head>
 
   <body>
+    <h2>Search information from CRM@JLR</h2>
     <form id="formId">
-      <label for="username">Please Enter Customer ID</label>
+      <label for="username">Search by Customer ID</label>
       <input type="text" id="username" name="username" placeholder="Customer ID">
       <button onclick="openUrl()" id="submitBtn" disabled="disabled">Get Customer ID</button>
+      <br><br><br>
+      <label for="username">Please Enter Customer ID and VIN</label>
+      <input type="text" id="username1" name="username1" placeholder="Customer ID">
+      <input type="text" id="vin" name="vin" placeholder="VIN">
+      <button onclick="getVin()" id="submitBtn2">Get VIN</button>
     </form>
     <script>
       (function() {
